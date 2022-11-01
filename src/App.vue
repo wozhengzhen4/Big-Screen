@@ -1,12 +1,40 @@
 <template>
-  <div id="app">
+  <div id="app" @click="click">
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
+      <!-- <router-link to="/a">aaa</router-link> | -->
     </nav>
-    <router-view/>
+    <router-view />
   </div>
 </template>
+
+
+
+
+<script>
+
+import { mapMutations } from 'vuex'
+export default {
+  data() {
+    return {
+
+    }
+  },
+
+  methods: {
+    ...mapMutations(["TabswitchTrue"]),
+
+    // 点击body判断循环子元素是否有inputbox  从而进行 tab的折叠收齐
+    click(e) {
+      let flag = e.path.some(dom => dom.id == "inputBox");
+      if (!flag)this.TabswitchTrue(false)
+
+    }
+  },
+}
+</script>
+
 
 <style lang="scss">
 #app {
