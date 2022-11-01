@@ -1,7 +1,7 @@
 <template>
   <div id="inputBox">
 
-    <div>{{Tabswitch}}</div>
+    <div>{{Tabswitch}}****</div>
     <el-input v-model="inputvalue" placeholder="请输入内容" @input="inputChange" clearable @clear="clear"></el-input>
 
     <transition name="el-zoom-in-top">
